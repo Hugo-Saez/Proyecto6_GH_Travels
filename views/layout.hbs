@@ -13,7 +13,9 @@
   <body>
     {{>header}}
     {{{body}}}
-    {{>footer}}
+    {{#if footerShow}}
+        {{>footer}}
+    {{/if}}
 
     <script type="text/javascript" src="/components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -21,6 +23,8 @@
     <script type="text/javascript" src="/javascripts/main.js"></script>
     <script type="text/javascript" src="/javascripts/login.js"></script>
     <script type="text/javascript" src="/javascripts/registro.js"></script>
+    <!-- Llamamos el script de encriptación MD5 desde la página de Paul Johnston -->
+    <script src="http://pajhome.org.uk/crypt/md5/2.2/md5-min.js"></script>
 
   </body>
 </html>

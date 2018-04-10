@@ -34,10 +34,10 @@ router.get('/privada',function(req,res,next){
 router.get('/destinos', function(req, res, next) {
     destinosModel.fetchAll((error,destinos)=>{
         if(error) return res.status(500).json(error);
-        if(req.session.isAdmin==1){
+        if(req.session.admin==1){
             res.render('adminview',{
                 title:"Gestión de destinos",
-                layout:"layout2",
+                layout:"layout",
                 isLoged : req.session.isLoged,
                 isAdmin : req.session.isAdmin,
                 user : req.session.username,

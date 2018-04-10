@@ -41,7 +41,7 @@ userModel.login = function(usuario,cb) {
         if (result != ''){
             let userData = {
               usuario: result[0].usuario,
-              admin: result[0].isAdmin
+              admin: result[0].admin
             };
             return cb(null,userData);
         } else {
