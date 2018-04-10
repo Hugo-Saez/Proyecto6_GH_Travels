@@ -1,0 +1,15 @@
+{{#if users.length}}
+    {{#each users}}
+        <div class="card">
+            <div class="card-header">
+                {{title}}
+            </div>
+            <div class="card-body">
+                <p>{{id}},
+                    {{usuario}},
+                    {{email}}
+                </p>
+            </div>
+        </div>
+    {{/each}}
+{{/if}}
