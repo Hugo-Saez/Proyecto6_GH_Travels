@@ -30,7 +30,6 @@ router.get('/privada',function(req,res,next){
     else res.redirect('/admin');
 });
 
-// Mostrar destinos
 router.get('/destinos', function(req, res, next) {
     destinosModel.fetchAll((error,destinos)=>{
         if(error) return res.status(500).json(error);
@@ -51,7 +50,6 @@ router.get('/destinos', function(req, res, next) {
     })
 });
 
-//Destinos activos
 router.get('/destinos/active/:id', function (req,res,next) {
     destinosModel.activoUpdate(req.params.id, (error,dest)=>{
         if(error) res.status(500).json(error);
@@ -61,7 +59,6 @@ router.get('/destinos/active/:id', function (req,res,next) {
     })
 });
 
-//Borrar destino
 router.get('/destinos/delete/:id', function (req,res,next) {
     destinosModel.destinoDelete(req.params.id,(error,dest)=>{
         if(error) res.status(500).json(error);
@@ -71,7 +68,6 @@ router.get('/destinos/delete/:id', function (req,res,next) {
     })
 });
 
-//Creacion de destinos
 router.post('/destinos/create', function (req,res,next) {
     let destino={
         viaje:req.body.viaje,

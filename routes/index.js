@@ -53,7 +53,6 @@ router.post('/login', function (req,res) {
     userModel.login(Usuario,function (error,result) {
         if(error) res.status(500).json(error);
 
-
     })
 });
 

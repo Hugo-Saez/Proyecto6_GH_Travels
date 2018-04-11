@@ -1,10 +1,3 @@
-header{
-  /*  background-image: url("../images/nathan-anderson-316188-unsplash.jpg");
-    background-position: center center;
-    background-size: cover;
-    padding-bottom: 3em; */
-}
-
 .container-fluid{
   padding-left: 0!important;
   padding-right: 0!important;
@@ -35,7 +28,6 @@ header{
   color: yellow!important;
 }
 #navbarTogglerDemo02{
-
   justify-content: center;
 }
 
@@ -53,19 +45,6 @@ nav.navbar {
     background-color: rgba(240,240,240,0.7);
 }
 
-/*
-#menu{
-    position: fixed;
-    width: 100vw;
-    z-index: 1;
-}
-*/
-
-/*
-#menu .normal{
-    ;
-}
-*/
 #menu img{
   max-width: 7em;
 }
@@ -73,7 +52,6 @@ nav.navbar {
 #textMenu{
   text-align: center;
 }
-
 
 #redesSocial ul{
   list-style-type: none;
@@ -130,6 +108,7 @@ nav.navbar {
   margin-left: 0.3em;
 }
 /* MENU - FIN  */
+
 /*DESTINOS - INICIO */
 
 
@@ -174,7 +153,6 @@ nav.navbar {
   padding: 10px 10px 0px 10px;
 }
 
-
 .p-1{
   padding: 0px !important;
 }
@@ -195,10 +173,8 @@ nav.navbar {
   display: inherit;
 }
 
-
 .destino .precio{
   color:grey;
-
 }
 
 .destino .precio strong{
@@ -208,6 +184,7 @@ nav.navbar {
   padding: 0px 0px 0px 0px !important;
   margin-right: 1em;
 }
+
 .destino-malta{
   background: url("../images/malta.jpg");
   background-repeat: no-repeat;
@@ -216,6 +193,7 @@ nav.navbar {
   width:100%;
   height: 12em;
 }
+
 .destino-london{
   background: url("../images/london.jpg");
   background-repeat: no-repeat;
@@ -224,15 +202,16 @@ nav.navbar {
   width:100%;
   height: 12em;
 }
+
 .destino-dublin{
   background: url("../images/dublin.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-
   width:100%;
   height: 12em;
 }
+
 .destino-paris{
   background: url("../images/paris.jpg");
   background-repeat: no-repeat;
@@ -241,6 +220,7 @@ nav.navbar {
   width:100%;
   height: 12em;
 }
+
 .destino-amsterdam{
   background: url("../images/amsterdam.jpg");
   background-repeat: no-repeat;
@@ -249,6 +229,7 @@ nav.navbar {
   width:100%;
   height: 12em;
 }
+
 .destino-rome{
   background: url("../images/roma.jpg");
   background-repeat: no-repeat;
@@ -257,16 +238,15 @@ nav.navbar {
   width:100%;
   height: 12em;
 }
+
 .destino:hover {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
-
 
 .fila-disponibilidad{
   margin-left: -15px !important;
   margin-right: -15px !important;
 }
-
 
 .form-control{
   min-height: 45px;
@@ -276,10 +256,10 @@ nav.navbar {
 .botones-disponibilidad{
   text-align: right;
 }
+
 /*DESTINOS - FIN */
 
 /* CSS para apartado SOMOS */
-
 
 #somos{
   width: 100vw;
@@ -297,21 +277,18 @@ nav.navbar {
   border: 1px solid #0D3349;
   border-radius: 10px;
 }
+
 hr{
   width:73%;
   margin-left: 0px;
   position: relative;
   border-color: yellow;
   margin-top: -4px;
-
 }
 
 #quienes_somos:hover {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
-
-
-
 
 /* CSS - FIN */
 
@@ -327,7 +304,6 @@ hr{
 }
 
 .wrapper-contacto {
- /* font-family: 'Teko', sans-serif;*/
   padding-top: 3%;
   padding-bottom: 3%;
 
@@ -337,7 +313,6 @@ hr{
   margin-bottom: 2%;
 }
 
-
 .hr-contact {
   border-style: inset;
   border-width: 3px;
@@ -345,13 +320,13 @@ hr{
 }
 
 .submit{
-  /*float: right;*/
   margin-top: 2%;
 }
 
 /* FIN apartado MAPA */
 
 /* FOOTER */
+
 footer{
   color: #fff;
   background: #0D3349;
@@ -419,8 +394,11 @@ footer{
 .btn-link{
     color: #fff;
 }
+
 /* FIN Login */
+
 /* CSS Registro */
+
 #registro{
   background-image: url("../images/invierno.jpg");
   background-position: center center;
@@ -446,8 +424,8 @@ footer{
 .cont-reg label{
   color: #fff;
 }
-/* FIN Registro */
 
+/* FIN Registro */
 
 /* pagina 404*/
 
@@ -468,9 +446,9 @@ footer{
   opacity:0.8;
 }
 
-
 /*fin 404*/
 /* mensaje de login correcto*/
+
 .bienvenido{
   text-align: center;
   margin-top: 1px;
@@ -479,7 +457,6 @@ footer{
 }
 
 
-/* ----------------------------*/
 /* Cambios en Tablet*/
 
 @media screen and (max-width: 785px) {
@@ -588,8 +565,6 @@ footer{
   #redesSocial2 .row .col-12{
     padding-left: 5vw;
   }
-
-
 }
 
 
