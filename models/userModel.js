@@ -50,4 +50,10 @@ userModel.login = function(usuario,cb) {
     })
 };
 
+
+userModel.edit = function(usuario,cb){
+    if(!conn) return cb("Fallo al conectar a la BD");
+    conn.query('UPDATE usuarios SET admin =?, activo=? WHERE id=?', [usuario.admin,usuario.activo,usuario.id])
+}
+
 module.exports = userModel;

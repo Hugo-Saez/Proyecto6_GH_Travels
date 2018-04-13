@@ -588,8 +588,11 @@ footer{
   #redesSocial2 .row .col-12{
     padding-left: 5vw;
   }
-
-
 }
 
+/*ADMINVIEW - INICIO*/
+.admin-margin{
+  margin-top: 6em;
+}
 
+/*ADMINVIEW - FIN*/

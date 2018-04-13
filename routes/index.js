@@ -8,7 +8,7 @@ router.get('/',(req,res,next)=> {
     destinosModel.fetchActivo((error, destinos) => {
     if(error) return res.status(500).json(error);
         res.render('home', {
-            title: "travels",
+            title: "GeeksHubs Travels",
             layout: "layout",
             isLoged: req.session.isLoged,
             isAdmin: req.session.isAdmin,

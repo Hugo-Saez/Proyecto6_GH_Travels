@@ -63,7 +63,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error404',{
         title:'error',
-        layout:'layout2'
+        layout:'layout'
       });
 });
 
