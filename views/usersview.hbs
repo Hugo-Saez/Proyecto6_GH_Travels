@@ -3,6 +3,7 @@
         <div class="row">
             <div class="col-10 offset-1 admin-margin">
                 <div class="table-responsive">
+                    <a class="btn btn-primary" href="/admin/destinos">Destinos</a>
                     <table class="table table-sm tablaDestinos">
                         <thead>
                         <tr>
@@ -28,6 +29,9 @@
                                     <td><!-- Button trigger modal -->
                                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalUser{{id}}">
                                             Editar
+                                        </button>
+                                        <button type="button" class="btn btn-warning">
+                                            Enviar Email
                                         </button>
 
                                         <!-- Modal -->
@@ -80,8 +84,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div>
-                                                                    <input type="number" name="id" value="{{id}}" >
-                                                                    {{id}}{{usuario}}
+                                                                    <input type="hidden" name="id" value="{{id}}" >
                                                                 </div>
                                                             </div>
                                                             <div class="modal-footer">

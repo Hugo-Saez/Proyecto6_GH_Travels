@@ -77,8 +77,8 @@ router.post('/destinos/create', function (req,res,next) {
     let destino={
         viaje:req.body.viaje,
         precio:req.body.precio,
-        fechaIda:req.body.fecha_sal,
-        fechaVuelta:req.body.fecha_vuel,
+        fecha_sal:req.body.fecha_sal,
+        fecha_vuel:req.body.fecha_vuel,
         descripcion:req.body.descripcion,
         imagen:req.body.imagen,
         activo:req.body.activo
