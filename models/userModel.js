@@ -74,7 +74,7 @@ userModel.getUserHash = function(hash,cb){
     if(!conn) return cb("Fallo al conectar a la BD");
     conn.query('SELECT * FROM usuarios WHERE password=?', hash, function (error, result) {
         if(error) return cb(error);
-        return cb(null, result)
+        return cb(null, result[0])
     });
 };
 
