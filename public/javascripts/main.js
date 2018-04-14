@@ -39,7 +39,7 @@ $("a").on('click', function(event) {
 
 // Mostrar y esconder añadir destino
 
-$('.nvoDestino').click(function () {
+$('#altaDest').click(function () {
     // $('#formCrearDest').slideToggle(2000);
     // $('#formCrearDest').delay(2000).slideToggle(1000);
     $('#formCrearDest').fadeIn(1000);
