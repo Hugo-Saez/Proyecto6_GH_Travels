@@ -14,6 +14,7 @@
                             <th scope="col">Admin</th>
                             <th scope="col">Activo</th>
                             <th scope="col"></th>
+                            <th scope="col"></th>
                         </tr>
                         </thead>
                         <tbody>
@@ -29,9 +30,6 @@
                                     <td><!-- Button trigger modal -->
                                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalUser{{id}}">
                                             Editar
-                                        </button>
-                                        <button type="button" class="btn btn-warning">
-                                            Enviar Email
                                         </button>
 
                                         <!-- Modal -->
@@ -96,6 +94,13 @@
                                                 </div>
                                             </div>
                                         </div>
+                                    </td>
+                                    <td>
+                                        <form action="/admin/recuperarpassword/{{password}}" method="get">
+                                            <button type="submit" class="btn btn-warning">
+                                                Enviar Email
+                                            </button>
+                                        </form>
                                     </td>
                                 </tr>
                             {{/each}}
