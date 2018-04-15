@@ -13,13 +13,19 @@
                 <li class="nav-item">
                     <a class="btn btn-outline-secondary boton-home" href="/#destinos">Destinos</a>
                 </li>
+                {{#if usuario}}
+                    <li class="nav-item">
+                        <a class="btn btn-outline-secondary boton-login" href="/logout">Cerrar Sesion</a>
+                    </li>
+                {{else}}
+                    <li class="nav-item">
+                        <a class="btn btn-outline-secondary boton-login" href="/login"><i class="fas fa-user"></i> Iniciar Sesion</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-secondary boton-registro" href="/registro"><i class="fas fa-sign-in-alt"></i> Registrarse</a>
+                    </li>
+                {{/if}}
 
-                <li class="nav-item">
-                    <a class="btn btn-outline-secondary boton-login" href="/login"><i class="fas fa-user"></i> Iniciar Sesion</a>
-                </li>
-                <li class="nav-item">
-                    <a class="btn btn-outline-secondary boton-registro" href="/registro"><i class="fas fa-sign-in-alt"></i> Registrarse</a>
-                </li>
             </ul>
         </div>
         <div id="redesSocial">

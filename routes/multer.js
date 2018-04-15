@@ -11,7 +11,7 @@ const storage = Multer.diskStorage({
     }
 
 });
-const upload = Multer({storage});
+const upload = Multer({storage: storage});
 
 router.get('/',(req,res,next)=>{
     res.render('subir',{

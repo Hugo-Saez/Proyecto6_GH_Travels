@@ -1,6 +1,19 @@
 var express = require('express');
 var router = express.Router();
 var Email = require('../config/emailConfig');
+const Multer = require('multer');
+
+const storage = Multer.diskStorage({
+    destination: function (req, file, cb){
+        cb(null,"uploads/");
+    },
+    filename: function(req, file, cb) {
+        cb(null, file.originalname);
+    }
+
+});
+
+const upload = Multer({storage: storage});
 
 
 var destinosModel=require('../models/destinosModel');
@@ -10,17 +23,6 @@ var userModel=require('../models/userModel');
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   res.status(200).json(req.session || "Sesión no disponible");
-});
-
-router.get('/create', function(req,res,next) {
-  req.session.username="mjosesc";
-  req.session.isAdmin=1;
-  res.redirect('/admin');
-});
-
-router.get('/remove',function(req,res,next) {
-    req.session.username=null;
-res.redirect('/admin');
 });
 
 router.get('/destroy',function(req,res,next){
@@ -71,16 +73,17 @@ router.get('/destinos/delete/:id', function (req,res,next) {
     })
 });
 
-router.post('/destinos/create', function (req,res,next) {
+router.post('/destinos/create', upload.single('imagen'), function (req,res,next) {
+    let imagenUrl = "/" + req.file.destination + req.file.filename
     let destino={
         viaje:req.body.viaje,
         precio:req.body.precio,
         fecha_sal:req.body.fecha_sal,
         fecha_vuel:req.body.fecha_vuel,
         descripcion:req.body.descripcion,
-        imagen:req.body.imagen,
+        imagen:imagenUrl,
         activo:req.body.activo
-    }
+    };
     destinosModel.destinoCreate(destino,(error,dest)=>{
         if(error) res.status(500).json(error);
         else{
@@ -89,7 +92,6 @@ router.post('/destinos/create', function (req,res,next) {
     })
 });
 
-// Mostrar usuarios
 router.get('/usuarios', function(req, res, next) {
     //console.log(req.body);
     userModel.fetchAll((error,usuarios)=>{
@@ -141,6 +143,7 @@ router.get('/recuperarpassword/:hash', function (req, res, next) {
         });
     })
 });
+
 
 module.exports = router;
 

@@ -6,14 +6,14 @@ var Email = require('../config/emailConfig');
 
 // Destinos en homepage
 router.get('/',(req,res,next)=> {
+
     destinosModel.fetchActivo((error, destinos) => {
     if(error) return res.status(500).json(error);
         res.render('home', {
             title: "GeeksHubs Travels",
             layout: "layout",
-            isLoged: req.session.isLoged,
-            isAdmin: req.session.isAdmin,
-            user: req.session.username,
+            admin: req.session.admin,
+            usuario: req.session.usuario,
             destinos,
             footerShow: true
         })
@@ -68,7 +68,7 @@ router.post('/login', function (req,res) {
     })
 });
 
-router.get('/destroy',(req,res,next)=>{
+router.get('/logout',(req,res,next)=>{
     req.session.destroy();
     res.redirect('/')
 });

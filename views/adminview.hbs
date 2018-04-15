@@ -44,7 +44,7 @@
                             <button id="altaDest" type="button" class="btn btn-outline-primary">Alta</button>
                         </div>
                         <div id="formCrearDest" style="display: none" class="addDest">
-                            <form action="/admin/destinos/create" method="post">
+                            <form action="/admin/destinos/create" method="post" enctype="multipart/form-data">
                                 <div class="row justify-content-center">
                                     <div class="col">
                                         <input type="text" class="form-control" name="viaje" placeholder="Viaje" required>
@@ -70,7 +70,7 @@
                                         <input type="text" class="form-control" name="precio" placeholder="precio" required>
                                     </div>
                                     <div class="col">
-                                        <input type="text" class="form-control" name="imagen" placeholder="imagen" required>
+                                        <input type="file" class="form-control" name="imagen" placeholder="imagen" required>
                                     </div>
                                 </div>
                                 <div class="row justify-content-center">
