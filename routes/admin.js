@@ -1,38 +1,24 @@
 var express = require('express');
 var router = express.Router();
 var Email = require('../config/emailConfig');
-const Multer = require('multer');
-
-const storage = Multer.diskStorage({
-    destination: function (req, file, cb){
-        cb(null,"uploads/");
-    },
-    filename: function(req, file, cb) {
-        cb(null, file.originalname);
-    }
-
-});
-
-const upload = Multer({storage: storage});
-
-
 var destinosModel=require('../models/destinosModel');
 var userModel=require('../models/userModel');
+var upload = require('../config/multer');
+// const Multer = require('multer');
+//
+// const storage = Multer.diskStorage({
+//     destination: function (req, file, cb){
+//         cb(null,"uploads/");
+//     },
+//     filename: function(req, file, cb) {
+//         cb(null, file.originalname);
+//     }
+// });
+//
+// const upload = Multer({storage: storage});
 
-
-/* GET users listing. */
 router.get('/', function(req, res, next) {
   res.status(200).json(req.session || "Sesión no disponible");
-});
-
-router.get('/destroy',function(req,res,next){
-    req.session.destroy();
-res.redirect('/admin');
-});
-
-router.get('/privada',function(req,res,next){
-    if(req.session.isAdmin==1)res.status(200).send("Conectado");
-    else res.redirect('/admin');
 });
 
 router.get('/destinos', function(req, res, next) {
@@ -42,9 +28,8 @@ router.get('/destinos', function(req, res, next) {
             res.render('adminview',{
                 title:"Gestión de destinos",
                 layout:"layout",
-                isLoged : req.session.isLoged,
-                isAdmin : req.session.isAdmin,
-                user : req.session.username,
+                admin: req.session.admin,
+                usuario: req.session.usuario,
                 destinos: destinos
             })
         }
@@ -100,8 +85,8 @@ router.get('/usuarios', function(req, res, next) {
             res.render('usersview',{
                 title:"Gestión de usuarios",
                 layout:"layout",
-                isAdmin : req.session.isAdmin,
-                user : req.session.username,
+                admin: req.session.admin,
+                usuario: req.session.usuario,
                 usuarios
             })
         }
@@ -143,7 +128,6 @@ router.get('/recuperarpassword/:hash', function (req, res, next) {
         });
     })
 });
-
 
 module.exports = router;
 

@@ -4,7 +4,6 @@ var userModel = require('../models/userModel');
 var destinosModel=require('../models/destinosModel');
 var Email = require('../config/emailConfig');
 
-// Destinos en homepage
 router.get('/',(req,res,next)=> {
 
     destinosModel.fetchActivo((error, destinos) => {
@@ -34,17 +33,6 @@ router.get('/registro', function(req, res, next) {
             title: 'Registro de Usuario',
             layout: 'layout'
         });
-});
-
-router.get('/userlist', (req,res,next)=>{
-    userModel.fetchAll((error,users)=>{
-        if(error) return res.status(500).json(error);
-        res.render('user-list',{
-            title:"Listado de Usuarios",
-            layout:"layout",
-            users
-        })
-    })
 });
 
 router.post('/login', function (req,res) {
