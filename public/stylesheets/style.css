@@ -262,7 +262,7 @@ nav.navbar {
 /* CSS para apartado SOMOS */
 
 #somos{
-  width: 100vw;
+  width: auto;
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
