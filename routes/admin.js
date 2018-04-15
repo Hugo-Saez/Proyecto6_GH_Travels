@@ -127,9 +127,9 @@ router.get('/recuperarpassword/:hash', function (req, res, next) {
     userModel.getUserHash(req.params.hash, function (error, result) {
         if(error) return res.status(500).json(error);
         let message = {
-            to: result[0].email,
+            to: result.email,
             subject: 'Recuperar contraseña',
-            html: '<p>Hola, para recuperar la contraseña, pincha en el siguiente enlace</p><a href="http://localhost:3000/recuperarpassword/'+ result[0].password +'">Recuperar contraseña</a>'
+            html: '<p>Hola, para recuperar la contraseña, pincha en el siguiente enlace</p><a href="http://localhost:3000/recuperarpassword/'+ result.password +'">Recuperar contraseña</a>'
         };
         Email.transporter.sendMail(message, (err, info) => {
             if(err){
