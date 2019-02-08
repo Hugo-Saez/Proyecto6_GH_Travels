@@ -4,4 +4,5 @@ node_modules
 /config/emailData.js
 ubuntu-xenial-16.04-cloudimg-console.log
 /logs/app.log
+package-lock.json
 
